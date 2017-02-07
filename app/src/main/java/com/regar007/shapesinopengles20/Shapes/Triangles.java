@@ -39,6 +39,12 @@ public class Triangles {
     private int aPositionHandle;
     private int aColorHandle;
 
+    /**
+     * instantiate the Triangle shape object
+     * @param activity
+     * @param positions
+     * @param colors
+     */
     public Triangles(Context activity, float[] positions, float[] colors) {
 
         /** initialize the line program */
@@ -58,6 +64,11 @@ public class Triangles {
 
     }
 
+    /**
+     * creates buffers for Triangle shape object
+     * @param positions
+     * @param colors
+     */
     public void createBuffers(float[] positions, float[] colors) {
         FloatBuffer aTriangleVerticesBuffer;
         FloatBuffer aTriangleColorBuffer;
@@ -91,6 +102,10 @@ public class Triangles {
         aTriangleColorBuffer = null;
     }
 
+    /**
+     * draws the Triangles shape object
+     * @param aMVPMatrix
+     */
     public void render(float[] aMVPMatrix){
         // Use culling to remove back faces.
         GLES20.glDisable(GLES20.GL_CULL_FACE);
@@ -122,6 +137,9 @@ public class Triangles {
 
     }
 
+    /**
+     * Delete buffers from OpenGL's memory
+     */
     public void release() {
         // Delete buffers from OpenGL's memory
         final int[] buffersToDelete = new int[] { aTrianglePositionsBufferIdx, aTriangleColorsBufferIdx};

@@ -47,6 +47,12 @@ public class Points {
     private int aColorHandle;
     private int aMVPMatrixHandle;
 
+    /**
+     * instantiate the Points shape object
+     * @param aActivity
+     * @param positions
+     * @param colors
+     */
     public Points(Context aActivity, float[] positions, float[] colors){
 
         /** initialize the point program */
@@ -65,6 +71,11 @@ public class Points {
         createBuffers(positions, colors);
     }
 
+    /**
+     * create buffers for the Points shape object
+     * @param pointPositions
+     * @param pointColors
+     */
     public void createBuffers(float[] pointPositions, float[] pointColors) {
         // First, copy cube information into client-side floating point buffers.
         FloatBuffer pointPositionsBuffer;
@@ -101,6 +112,10 @@ public class Points {
         }
     }
 
+    /**
+     * draws the Points shape object
+     * @param aMVPMatrix
+     */
     public void render(float[] aMVPMatrix) {
 
         // Set our per-vertex lighting program.
@@ -128,6 +143,9 @@ public class Points {
         GLES20.glDrawArrays(GLES20.GL_POINTS, 0, vertexCount);
     }
 
+    /**
+     * Delete buffers from OpenGL's memory
+     */
     public void release() {
         // Delete buffers from OpenGL's memory
         final int[] buffersToDelete = new int[] { aPointPositionsBufferIdx, aPointColorsBufferIdx };

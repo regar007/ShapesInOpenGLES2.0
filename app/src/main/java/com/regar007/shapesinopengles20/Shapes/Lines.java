@@ -34,6 +34,12 @@ public class Lines {
     private int aLineColorsBufferIdx;
     private int vertexCount;
 
+    /**
+     * instantiate the Lines shape object
+     * @param activity
+     * @param positions
+     * @param colors
+     */
     public Lines(Context activity, float[] positions, float[] colors) {
 
         /** initialize the line program */
@@ -52,6 +58,11 @@ public class Lines {
         createBuffers(positions, colors);
     }
 
+    /**
+     * create buffers for the Lines shape object
+     * @param linePositions
+     * @param lineColors
+     */
     public void createBuffers(float[] linePositions, float[] lineColors) {
         final int lineDataLength = linePositions.length;
         vertexCount = linePositions.length / POSITION_DATA_SIZE;
@@ -85,6 +96,11 @@ public class Lines {
         lineColorsBuffers.limit(0);
         lineColorsBuffers = null;
     }
+
+    /**
+     * draws the Lines shape object
+     * @param aMVPMatrix
+     */
     public void render(float[] aMVPMatrix) {
 
         // Set our per-vertex lighting program.
@@ -113,6 +129,9 @@ public class Lines {
 
     }
 
+    /**
+     * Delete buffers from OpenGL's memory
+     */
     public void release() {
         // Delete buffers from OpenGL's memory
         final int[] buffersToDelete = new int[] { aLineColorsBufferIdx, aLinePositionsBufferIdx };
