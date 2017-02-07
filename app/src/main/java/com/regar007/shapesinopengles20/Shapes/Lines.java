@@ -107,7 +107,7 @@ public class Lines {
         // Clear the currently bound buffer (so future OpenGL calls do not use this buffer).
         GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, 0);
 
-        // Draw the point.
+        // Draw the line.
         GLES20.glDrawArrays(GLES20.GL_LINES, 0, vertexCount);
 
     }
