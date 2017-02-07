@@ -1,4 +1,4 @@
-package com.regar007.shapesinopengles20;
+package com.regar007.shapesinopengles20.GLSurface;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;

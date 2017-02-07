@@ -1,28 +1,17 @@
-package com.regar007.shapesinopengles20;
+package com.regar007.shapesinopengles20.GLSurface;
 
-import android.content.Context;
-import android.graphics.Color;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
-import android.opengl.GLU;
 import android.opengl.Matrix;
 import android.os.SystemClock;
 
+import com.regar007.shapesinopengles20.ShapeActivity;
+import com.regar007.shapesinopengles20.Shapes.Lines;
 import com.regar007.shapesinopengles20.Shapes.Points;
-import com.regar007.shapesinopengles20.Utils.ShaderHelper;
-import com.regar007.shapesinopengles20.Utils.TextureHelper;
-import com.regar007.shapesinopengles20.Utils.RawResourceReader;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.FloatBuffer;
-import java.nio.ShortBuffer;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 /**
@@ -50,9 +39,6 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 	 */
 	private float[] aViewMatrix = new float[16];
 
-	/** A default view matrix */
-	private float[] aDefaultViewMatrix = new float[16];
-
 	/** Store the projection matrix. This is used to project the scene onto a 2D viewport. */
 	private float[] aProjectionMatrix = new float[16];
 
@@ -61,9 +47,6 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 
 	/** Store the accumulated rotation. */
 	private final float[] aAccumulatedRotation = new float[16];
-
-	/** Store the accumulated rotation. */
-	private final float[] aMVPWithoutRotationMatrix = new float[16];
 
 	/** Store the current rotation. */
 	private final float[] aCurrentRotation = new float[16];
@@ -75,9 +58,6 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 	 * Stores a copy of the model matrix specifically for the light position.
 	 */
 	private float[] aLightModelMatrix = new float[16];
-
-	/** This will be used to pass in the modelview matrix. */
-	private int aMVMatrixHandle;
 
 	/** This will be used to pass in the light position. */
 	private int aLightPosHandle;
@@ -108,23 +88,13 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 	/** Used to hold the transformed position of the light in eye space (after transformation via modelview matrix) */
 	private final float[] aLightPosInEyeSpace = new float[4];
 
-	/** This is a handle to out point shading program */
-	private int aPlaneProgramHandle;
-
     // Shapes objects
     private Points aPoints;
+	private Lines aLines;
 
 	// These still work without volatile, but refreshes are not guaranteed to happen.
-	public volatile boolean isRotating = false;
-	public volatile boolean aPlotModifyStatus;
-	public volatile float aTouchX;
-	public volatile float aTouchY;
 	public volatile float aDeltaX;
 	public volatile float aDeltaY;
-	public volatile float aZoomX;
-	public volatile float aZoomY;
-	public volatile float aDragX;
-	public volatile float aDragY;
 
 	/** Thread executor for generating data points in the background. */
 	private final ExecutorService aSingleThreadedExecutor = Executors.newSingleThreadExecutor();
@@ -169,6 +139,8 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 						try {
                             if(shapeNumner == 0){
                                 aPoints = new Points(aShapeActivity, new float[]{-1, -1, -1, 1, 1, 1}, new float[]{1, 0, 0, 1, 0, 1, 1, 1});
+                            }else if(shapeNumner == 1){
+                                aLines = new Lines(aShapeActivity, new float[]{-1, -1, -1, 1, 1, 1}, new float[]{1, 0, 0, 1, 0, 1, 1, 1});
                             }
 						} catch (OutOfMemoryError err) {
 
@@ -231,7 +203,6 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 		// NOTE: In OpenGL 1, a ModelView matrix is used, which is a combination of a model and
 		// view matrix. In OpenGL 2, we can keep track of these matrices separately if we choose.
 		Matrix.setLookAtM(aViewMatrix, 0, eyeX, eyeY, eyeZ, lookX, lookY, lookZ, upX, upY, upZ);
-		System.arraycopy(aViewMatrix, 0, aDefaultViewMatrix, 0, aViewMatrix.length);
 
 		//aAndroidDataHandle = a[0];
 		// Initialize the accumulated rotation matrix
@@ -266,11 +237,11 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 	{
 		GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
 
-			// Do a complete rotation every 100 milli seconds.
-			long time = SystemClock.uptimeMillis() % 1000000L;
-			if(time - aPrevTime > 100){
-				aPrevTime = time;
-			}
+        // Do a complete rotation every 100 milli seconds.
+        long time = SystemClock.uptimeMillis() % 1000000L;
+        if(time - aPrevTime > 100){
+            aPrevTime = time;
+        }
 
 		// Calculate position of the light. Push into the distance.
 		Matrix.setIdentityM(aLightModelMatrix, 0);
@@ -312,6 +283,8 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 
         if(aPoints != null){
             aPoints.render(aMVPMatrix);
+        }else if(aLines != null){
+            aLines.render(aMVPMatrix);
         }
 
 	}

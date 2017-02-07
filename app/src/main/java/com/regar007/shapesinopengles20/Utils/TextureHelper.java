@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
 /**
- * Created by ashokr on 12/15/2016.
+ * Created by regar007.
  *
  * <p>
  *     This is created to read a texture from an image on file system.

@@ -7,8 +7,8 @@ import android.content.pm.ConfigurationInfo;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 
-import com.regar007.shapesinopengles20.ShapeGLSurfaceView;
-import com.regar007.shapesinopengles20.ShapeRenderer;
+import com.regar007.shapesinopengles20.GLSurface.ShapeGLSurfaceView;
+import com.regar007.shapesinopengles20.GLSurface.ShapeRenderer;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.

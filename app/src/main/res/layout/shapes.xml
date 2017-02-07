@@ -3,7 +3,7 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"	
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
-	<com.regar007.shapesinopengles20.ShapeGLSurfaceView
+	<com.regar007.shapesinopengles20.GLSurface.ShapeGLSurfaceView
 		android:id="@+id/gl_surface_view"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent" />

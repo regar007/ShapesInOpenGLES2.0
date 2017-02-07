@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
- * Created by ashokr on 12/15/2016.
+ * Created by regar007.
  *
  * <p>
  *     This is created to read a read text from a file on system.

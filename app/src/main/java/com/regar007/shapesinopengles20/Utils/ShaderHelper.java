@@ -4,7 +4,7 @@ import android.opengl.GLES20;
 import android.util.Log;
 
 /**
- * Created by ashokr on 12/15/2016.
+ * Created by regar007.
  *
  * <p>
  *     This is created to compile shaders and then link them to gles programs

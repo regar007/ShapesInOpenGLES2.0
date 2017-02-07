@@ -42,6 +42,15 @@ public class MainActivity extends ListActivity
             activityMapping.put(i++, ShapeActivity.class);
         }
 
+        {
+            final Map<String, Object> item = new HashMap<String, Object>();
+            item.put(ITEM_IMAGE, R.mipmap.ic_launcher);
+            item.put(ITEM_TITLE, getText(R.string.shape_two));
+            item.put(ITEM_SUBTITLE, getText(R.string.shape_two_subtitle));
+            data.add(item);
+            activityMapping.put(i++, ShapeActivity.class);
+        }
+
         final SimpleAdapter dataAdapter = new SimpleAdapter(this, data, R.layout.toc_item, new String[] {ITEM_IMAGE, ITEM_TITLE, ITEM_SUBTITLE}, new int[] {R.id.Image, R.id.Title, R.id.SubTitle});
         setListAdapter(dataAdapter);
 
@@ -52,6 +61,7 @@ public class MainActivity extends ListActivity
                                     int position, long id)
             {
                 final Class<? extends Activity> activityToLaunch = activityMapping.get(position);
+                ShapeActivity.shape = position;
 
                 if (activityToLaunch != null)
                 {
