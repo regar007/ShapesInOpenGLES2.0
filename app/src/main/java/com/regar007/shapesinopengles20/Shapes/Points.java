@@ -18,6 +18,7 @@ import com.regar007.shapesinopengles20.R;
  *
  * This class takes "Activity", "Points in {x, y, z} order" and "Colors in {r, g, b, a} order".
  * Use(Once): aPoint = new Points(activity, new float{0, 0, 0, 1, 1, 1}, new float{1, 0, 0, 1, 0, 1, 0, 1});
+ * Note: Use(OnDrawFrame) call createBuffer() function with changed values.
  * render function takes "MVP Matrix to draw point/points".
  * Use(OnDrawFrame): aPoint.render(mvpMatrix);
  */

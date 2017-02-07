@@ -6,6 +6,8 @@
     <string name="shape_one_subtitle">This draws a Point or Points in OpenGL ES 2.</string>
     <string name="shape_two">Shape Two: Drawing Lines.</string>
     <string name="shape_two_subtitle">This draws a Line or Lines in OpenGL ES 2.</string>
+    <string name="shape_three">Shape Three: Drawing Triangles.</string>
+    <string name="shape_three_subtitle">This draws a Triangle or Triangles in OpenGL ES 2.</string>
     <string-array name="lesson_six_min_filter_types">
         <item>GL_NEAREST</item>
         <item>GL_LINEAR</item>

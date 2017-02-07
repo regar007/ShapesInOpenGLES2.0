@@ -18,6 +18,7 @@ import java.nio.FloatBuffer;
  *
  * This class takes "Activity", " a Combination of two Points in {x1, y1, z1, x2, y2, z2} order" and "Colors in {r, g, b, a, r, g, b, a} order".
  * Use(Once): aLines = new Lines(activity, new float{-1, -1, -1, 1, 1, 1}, new float{1, 0, 0, 1, 0, 1, 0, 1});
+ * Note: Use(OnDrawFrame) call createBuffer() function with changed values.
  * render function takes "MVP Matrix to draw point/points".
  * Use(OnDrawFrame): aPoint.render(mvpMatrix);
  */

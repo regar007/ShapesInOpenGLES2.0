@@ -8,6 +8,7 @@ import android.os.SystemClock;
 import com.regar007.shapesinopengles20.ShapeActivity;
 import com.regar007.shapesinopengles20.Shapes.Lines;
 import com.regar007.shapesinopengles20.Shapes.Points;
+import com.regar007.shapesinopengles20.Shapes.Triangles;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -91,6 +92,7 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
     // Shapes objects
     private Points aPoints;
 	private Lines aLines;
+    private Triangles aTriangles;
 
 	// These still work without volatile, but refreshes are not guaranteed to happen.
 	public volatile float aDeltaX;
@@ -141,6 +143,9 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
                                 aPoints = new Points(aShapeActivity, new float[]{-1, -1, -1, 1, 1, 1}, new float[]{1, 0, 0, 1, 0, 1, 1, 1});
                             }else if(shapeNumner == 1){
                                 aLines = new Lines(aShapeActivity, new float[]{-1, -1, -1, 1, 1, 1}, new float[]{1, 0, 0, 1, 0, 1, 1, 1});
+                            }else if(shapeNumner == 2){
+                                aTriangles = new Triangles(aShapeActivity, new float[]{-1, -1, -1, 1, -1, -1, 1, 1, 1},
+                                        new float[]{1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0 });
                             }
 						} catch (OutOfMemoryError err) {
 
@@ -285,6 +290,8 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
             aPoints.render(aMVPMatrix);
         }else if(aLines != null){
             aLines.render(aMVPMatrix);
+        }else if(aTriangles != null){
+            aTriangles.render(aMVPMatrix);
         }
 
 	}
