@@ -5,10 +5,13 @@ import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 import android.os.SystemClock;
 
+import com.regar007.shapesinopengles20.R;
 import com.regar007.shapesinopengles20.ShapeActivity;
 import com.regar007.shapesinopengles20.Shapes.Lines;
 import com.regar007.shapesinopengles20.Shapes.Points;
+import com.regar007.shapesinopengles20.Shapes.Quad;
 import com.regar007.shapesinopengles20.Shapes.Triangles;
+import com.regar007.shapesinopengles20.Utils.TextureHelper;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -89,10 +92,14 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 	/** Used to hold the transformed position of the light in eye space (after transformation via modelview matrix) */
 	private final float[] aLightPosInEyeSpace = new float[4];
 
+    /** Texture to draw */
+    private static int aTexture;
+
     // Shapes objects
     private Points aPoints;
 	private Lines aLines;
     private Triangles aTriangles;
+    private Quad aQuad;
 
 	// These still work without volatile, but refreshes are not guaranteed to happen.
 	public volatile float aDeltaX;
@@ -146,6 +153,8 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
                             }else if(shapeNumner == 2){
                                 aTriangles = new Triangles(aShapeActivity, new float[]{-1, -1, -1, 1, -1, -1, 1, 1, 1},
                                         new float[]{1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0 });
+                            }else if(shapeNumner == 3){
+                                aQuad = new Quad(aShapeActivity, new float[]{-1, -1, 1},new float[]{2, 2, 0});
                             }
 						} catch (OutOfMemoryError err) {
 
@@ -178,6 +187,8 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 	@Override
 	public void onSurfaceCreated(GL10 glUnused, javax.microedition.khronos.egl.EGLConfig config)
 	{
+        aTexture = TextureHelper.loadTexture(aShapeActivity, R.drawable.stone_wall_public_domain
+                , false);
 		generatePlots(aShapeNumber);
 
 		// Set the background clear color to black.
@@ -292,6 +303,8 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
             aLines.render(aMVPMatrix);
         }else if(aTriangles != null){
             aTriangles.render(aMVPMatrix);
+        }else if(aQuad != null){
+            aQuad.render(aMVPMatrix, aTexture);
         }
 
 	}

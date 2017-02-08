@@ -26,7 +26,18 @@ public class ShapeActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		if(shape == 0) {
+			setTitle(R.string.shape_one);
+		}
+		else if(shape == 1){
+			setTitle(R.string.shape_two);
+		}
+        else if(shape == 2){
+            setTitle(R.string.shape_three);
+        }
+        else if(shape == 3){
+            setTitle(R.string.shape_four);
+        }
 		setContentView(R.layout.shapes);
 
 		aGLSurfaceView = (ShapeGLSurfaceView) findViewById(R.id.gl_surface_view);

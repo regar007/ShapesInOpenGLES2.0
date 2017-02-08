@@ -107,7 +107,7 @@ public class Triangles {
      * @param aMVPMatrix
      */
     public void render(float[] aMVPMatrix){
-        // Use culling to remove back faces.
+        // disable culling to enable back faces.
         GLES20.glDisable(GLES20.GL_CULL_FACE);
 
         // Tell OpenGL to use this program when rendering.

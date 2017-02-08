@@ -1,13 +1,15 @@
 <resources>
     <string name="app_name">ShapesInOpenGLES2.0</string>
-    <string name="toc">Table of Contents</string>
-    <string name="tocHeader">Welcome to Learn drawing Shapes in OpenGL ES2.0! The App uses VBOs implementation to draw Shapes!</string>
+    <string name="toc">Shapes In OpenGLES2.0</string>
+    <string name="tocHeader">Welcome to Learn drawing Shapes in OpenGL ES2.0! Click on topic to see the output! Follow the link to access code https://github.com/regar007/ShapesInOpenGLES2.0</string>
     <string name="shape_one">Shape One: Drawing Points.</string>
     <string name="shape_one_subtitle">This draws a Point or Points in OpenGL ES 2.</string>
     <string name="shape_two">Shape Two: Drawing Lines.</string>
     <string name="shape_two_subtitle">This draws a Line or Lines in OpenGL ES 2.</string>
     <string name="shape_three">Shape Three: Drawing Triangles.</string>
     <string name="shape_three_subtitle">This draws a Triangle or Triangles in OpenGL ES 2.</string>
+    <string name="shape_four">Shape Four: Drawing Quad.</string>
+    <string name="shape_four_subtitle">This draws a Quad in OpenGL ES 2.</string>
     <string-array name="lesson_six_min_filter_types">
         <item>GL_NEAREST</item>
         <item>GL_LINEAR</item>
