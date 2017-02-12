@@ -4,7 +4,7 @@ This tutorial helps the Android developers who are beginners in OpenGLES2.0 to c
 
 This is an attempt to simplify a developer's work so that he/she can focus more on the "IDEA" rather than the "IMPLEMENTATION" of the app.  
 
-* [App](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/app.png)
+* ![App](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/app.png)
 
 > [*Utils*](https://github.com/regar007/ShapesInOpenGLES2.0/tree/master/app/src/main/java/com/regar007/shapesinopengles20/Utils) folder has utility classes to compile shader, create texture, read shader from string and check gl errors.
 
@@ -14,19 +14,19 @@ This is an attempt to simplify a developer's work so that he/she can focus more 
 
 Shapes implemented :-
 * [Points](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Points.java)
-[Points](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/points.png)
+![Points](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/points.png)
 
 * [Lines](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Lines.java)
-[Lines](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/line.png)
+* ![Lines](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/line.png)
 
 * [Triangles](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Triangles.java)
-[Triangles](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/triangle.png)
+* ![Triangles](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/triangle.png)
 
 * [Quads](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Quad.java)
-[Quad](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/quad.png)
+* ![Quad](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/quad.png)
 
 * [Cubes](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Cubes.java)
-[Cubes](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/cube.png)
+* ![Cubes](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/cube.png)
 
 
 > *NOTE:* if you would like to know more about modification of code to suit your purpose, you can write to me at [regar.ashok@gmail.com](). I would be happy to help!    
