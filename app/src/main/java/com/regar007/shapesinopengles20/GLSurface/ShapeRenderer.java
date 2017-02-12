@@ -11,6 +11,7 @@ import com.regar007.shapesinopengles20.Shapes.Cubes;
 import com.regar007.shapesinopengles20.Shapes.Lines;
 import com.regar007.shapesinopengles20.Shapes.Points;
 import com.regar007.shapesinopengles20.Shapes.Quad;
+import com.regar007.shapesinopengles20.Shapes.Spheres;
 import com.regar007.shapesinopengles20.Shapes.Triangles;
 import com.regar007.shapesinopengles20.Utils.TextureHelper;
 
@@ -102,6 +103,7 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
     private Triangles aTriangles;
     private Quad aQuad;
 	private Cubes aCubes;
+    private Spheres aSpheres;
 
 	// These still work without volatile, but refreshes are not guaranteed to happen.
 	public volatile float aDeltaX;
@@ -162,7 +164,10 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
                                 float[] colors = new float[]{1, 0, 0, 1}; // rgba
                                 aCubes = new Cubes(aShapeActivity, positions, colors);
                             }else if(shapeNumner == 5){
-
+                                float[] positions = new float[]{-1, -1, -1, 1, 1, 1};
+                                float[] colors = new float[]{0, 1, 0, 1, 0, 1, 1, 1};
+                                float[] radii = new float[]{.5f, .5f};
+                                aSpheres = new Spheres(aShapeActivity, 0, 50, positions, colors, radii);
                             }
 
 						} catch (OutOfMemoryError err) {
@@ -316,6 +321,8 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
             aQuad.render(aMVPMatrix, aTexture);
         }else if(aCubes != null){
             aCubes.render(aMVPMatrix, aTexture);
+        }else if(aSpheres != null){
+            aSpheres.render(aMVPMatrix);
         }
 
 	}

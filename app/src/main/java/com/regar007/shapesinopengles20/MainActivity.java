@@ -80,7 +80,7 @@ public class MainActivity extends ListActivity
 
         {
             final Map<String, Object> item = new HashMap<String, Object>();
-            item.put(ITEM_IMAGE, R.mipmap.ic_launcher);
+            item.put(ITEM_IMAGE, R.drawable.spheres);
             item.put(ITEM_TITLE, getText(R.string.shape_six));
             item.put(ITEM_SUBTITLE, getText(R.string.shape_six_subtitle));
             data.add(item);
