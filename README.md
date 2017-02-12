@@ -14,18 +14,23 @@ This is an attempt to simplify a developer's work so that he/she can focus more 
 
 Shapes implemented :-
 * [Points](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Points.java)
+
 ![Points](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/points.png)
 
 * [Lines](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Lines.java)
+
 ![Lines](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/line.png)
 
 * [Triangles](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Triangles.java)
+
 ![Triangles](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/triangle.png)
 
 * [Quads](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Quad.java)
+
 ![Quad](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/quad.png)
 
 * [Cubes](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Cubes.java)
+
 ![Cubes](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/cube.png)
 
 
