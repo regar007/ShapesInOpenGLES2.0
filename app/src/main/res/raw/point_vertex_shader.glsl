@@ -11,5 +11,5 @@ void main()
     v_Color = a_Color;
 
 	gl_Position =  u_MVPMatrix * a_Position;
-    gl_PointSize = 10.0;
+    gl_PointSize = 50.0;
 }

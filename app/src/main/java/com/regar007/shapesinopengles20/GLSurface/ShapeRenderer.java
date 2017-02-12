@@ -7,6 +7,7 @@ import android.os.SystemClock;
 
 import com.regar007.shapesinopengles20.R;
 import com.regar007.shapesinopengles20.ShapeActivity;
+import com.regar007.shapesinopengles20.Shapes.Cubes;
 import com.regar007.shapesinopengles20.Shapes.Lines;
 import com.regar007.shapesinopengles20.Shapes.Points;
 import com.regar007.shapesinopengles20.Shapes.Quad;
@@ -100,6 +101,7 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 	private Lines aLines;
     private Triangles aTriangles;
     private Quad aQuad;
+	private Cubes aCubes;
 
 	// These still work without volatile, but refreshes are not guaranteed to happen.
 	public volatile float aDeltaX;
@@ -149,13 +151,20 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
                             if(shapeNumner == 0){
                                 aPoints = new Points(aShapeActivity, new float[]{-1, -1, -1, 1, 1, 1}, new float[]{1, 0, 0, 1, 0, 1, 1, 1});
                             }else if(shapeNumner == 1){
-                                aLines = new Lines(aShapeActivity, new float[]{-1, -1, -1, 1, 1, 1}, new float[]{1, 0, 0, 1, 0, 1, 1, 1});
+                                aLines = new Lines(aShapeActivity, new float[]{-1, -1, -1, 1, 1, 1}, new float[]{0, 1, 0, 1, 0, 1, 0, 1});
                             }else if(shapeNumner == 2){
                                 aTriangles = new Triangles(aShapeActivity, new float[]{-1, -1, -1, 1, -1, -1, 1, 1, 1},
                                         new float[]{1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0 });
                             }else if(shapeNumner == 3){
                                 aQuad = new Quad(aShapeActivity, new float[]{-1, -1, 1},new float[]{2, 2, 0});
+                            }else if(shapeNumner == 4){
+                                float[] positions = new float[]{-1, 1, -1, 1, -1, 1,}; // x1, x2, y1, y2, z1, z2
+                                float[] colors = new float[]{1, 0, 0, 1}; // rgba
+                                aCubes = new Cubes(aShapeActivity, positions, colors);
+                            }else if(shapeNumner == 5){
+
                             }
+
 						} catch (OutOfMemoryError err) {
 
 							// Not supposed to manually call this, but Dalvik sometimes needs some additional prodding to clean up the heap.
@@ -305,6 +314,8 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
             aTriangles.render(aMVPMatrix);
         }else if(aQuad != null){
             aQuad.render(aMVPMatrix, aTexture);
+        }else if(aCubes != null){
+            aCubes.render(aMVPMatrix, aTexture);
         }
 
 	}

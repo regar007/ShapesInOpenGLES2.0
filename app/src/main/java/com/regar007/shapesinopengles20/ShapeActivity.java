@@ -35,9 +35,16 @@ public class ShapeActivity extends Activity {
         else if(shape == 2){
             setTitle(R.string.shape_three);
         }
-        else if(shape == 3){
-            setTitle(R.string.shape_four);
-        }
+		else if(shape == 3){
+			setTitle(R.string.shape_four);
+		}
+		else if(shape == 4){
+			setTitle(R.string.shape_five);
+		}
+		else if(shape == 5){
+			setTitle(R.string.shape_six);
+		}
+
 		setContentView(R.layout.shapes);
 
 		aGLSurfaceView = (ShapeGLSurfaceView) findViewById(R.id.gl_surface_view);
