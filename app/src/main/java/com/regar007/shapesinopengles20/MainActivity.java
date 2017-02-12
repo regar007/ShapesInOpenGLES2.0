@@ -35,7 +35,7 @@ public class MainActivity extends ListActivity
 
         {
             final Map<String, Object> item = new HashMap<String, Object>();
-            item.put(ITEM_IMAGE, R.mipmap.ic_launcher);
+            item.put(ITEM_IMAGE, R.drawable.points);
             item.put(ITEM_TITLE, getText(R.string.shape_one));
             item.put(ITEM_SUBTITLE, getText(R.string.shape_one_subtitle));
             data.add(item);
@@ -44,7 +44,7 @@ public class MainActivity extends ListActivity
 
         {
             final Map<String, Object> item = new HashMap<String, Object>();
-            item.put(ITEM_IMAGE, R.mipmap.ic_launcher);
+            item.put(ITEM_IMAGE, R.drawable.line);
             item.put(ITEM_TITLE, getText(R.string.shape_two));
             item.put(ITEM_SUBTITLE, getText(R.string.shape_two_subtitle));
             data.add(item);
@@ -53,7 +53,7 @@ public class MainActivity extends ListActivity
 
         {
             final Map<String, Object> item = new HashMap<String, Object>();
-            item.put(ITEM_IMAGE, R.mipmap.ic_launcher);
+            item.put(ITEM_IMAGE, R.drawable.triangle);
             item.put(ITEM_TITLE, getText(R.string.shape_three));
             item.put(ITEM_SUBTITLE, getText(R.string.shape_three_subtitle));
             data.add(item);
@@ -62,7 +62,7 @@ public class MainActivity extends ListActivity
 
         {
             final Map<String, Object> item = new HashMap<String, Object>();
-            item.put(ITEM_IMAGE, R.mipmap.ic_launcher);
+            item.put(ITEM_IMAGE, R.drawable.quad);
             item.put(ITEM_TITLE, getText(R.string.shape_four));
             item.put(ITEM_SUBTITLE, getText(R.string.shape_four_subtitle));
             data.add(item);
@@ -71,7 +71,7 @@ public class MainActivity extends ListActivity
 
         {
             final Map<String, Object> item = new HashMap<String, Object>();
-            item.put(ITEM_IMAGE, R.mipmap.ic_launcher);
+            item.put(ITEM_IMAGE, R.drawable.cube);
             item.put(ITEM_TITLE, getText(R.string.shape_five));
             item.put(ITEM_SUBTITLE, getText(R.string.shape_five_subtitle));
             data.add(item);
