@@ -4,7 +4,8 @@ This tutorial helps the Android developers who are beginners in OpenGLES2.0 to c
 
 This is an attempt to simplify a developer's work so that he/she can focus more on the "IDEA" rather than the "IMPLEMENTATION" of the app.  
 
-![App](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/app.png)
+![App1](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/app.png)
+![App2](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/app2.png)
 
 > [*Utils*](https://github.com/regar007/ShapesInOpenGLES2.0/tree/master/app/src/main/java/com/regar007/shapesinopengles20/Utils) folder has utility classes to compile shader, create texture, read shader from string and check gl errors.
 
