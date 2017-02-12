@@ -115,8 +115,9 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 	/** The current shape variables. */
 	private int _width, _height;
 	private float aPrevTime;
+    private boolean aRotationStatus = true;
 
-	/**
+    /**
 	 * Initialize the model data.
 	 */
 	public ShapeRenderer(final ShapeActivity shapeActivity, final GLSurfaceView glSurfaceView, int shapeNumber) {
@@ -267,11 +268,9 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 	{
 		GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
 
-        // Do a complete rotation every 100 milli seconds.
-        long time = SystemClock.uptimeMillis() % 1000000L;
-        if(time - aPrevTime > 100){
-            aPrevTime = time;
-        }
+        // Do a complete rotation every 10 seconds.
+        long time = SystemClock.uptimeMillis() % 10000L;
+        float angleInDegrees = (360.0f / 10000.0f) * ((int) time);
 
 		// Calculate position of the light. Push into the distance.
 		Matrix.setIdentityM(aLightModelMatrix, 0);
@@ -282,12 +281,19 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 
 		// Translate the cube into the screen.
 		Matrix.setIdentityM(aModelMatrix, 0);
-
 		Matrix.translateM(aModelMatrix, 0, 0, 0, -3.5f);
+        if(aDeltaX != 0 || aDeltaY != 0) {
+            aRotationStatus = false;
+        }
+        if(aRotationStatus) {
+            Matrix.rotateM(aModelMatrix, 0, angleInDegrees, 1.0f, 0.0f, 0.0f);
+            Matrix.rotateM(aModelMatrix, 0, angleInDegrees, 0.0f, 1.0f, 0.0f);
+            Matrix.rotateM(aModelMatrix, 0, angleInDegrees, 0.0f, 0.0f, 1.0f);
+        }
 
 		// Set a matrix that contains the current rotation.
 		Matrix.setIdentityM(aCurrentRotation, 0);
-		Matrix.rotateM(aCurrentRotation, 0, aDeltaX, 0.0f, 1.0f, 0.0f);
+        Matrix.rotateM(aCurrentRotation, 0, aDeltaX, 0.0f, 1.0f, 0.0f);
 		Matrix.rotateM(aCurrentRotation, 0, aDeltaY, 1.0f, 0.0f, 0.0f);
 		aDeltaX = 0.0f;
 		aDeltaY = 0.0f;
