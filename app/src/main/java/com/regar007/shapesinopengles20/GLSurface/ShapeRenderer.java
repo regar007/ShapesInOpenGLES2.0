@@ -8,6 +8,7 @@ import android.os.SystemClock;
 import com.regar007.shapesinopengles20.R;
 import com.regar007.shapesinopengles20.ShapeActivity;
 import com.regar007.shapesinopengles20.Shapes.Cubes;
+import com.regar007.shapesinopengles20.Shapes.HeightMap;
 import com.regar007.shapesinopengles20.Shapes.Lines;
 import com.regar007.shapesinopengles20.Shapes.Points;
 import com.regar007.shapesinopengles20.Shapes.Quad;
@@ -105,6 +106,10 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 	private Cubes aCubes;
     private Spheres aSpheres;
 
+    private HeightMap aHeightMap;
+	private static final int PLOT_RANGE = 240;
+	private static final int PLOT_MIN_POSITION = -120;
+
 	// These still work without volatile, but refreshes are not guaranteed to happen.
 	public volatile float aDeltaX;
 	public volatile float aDeltaY;
@@ -169,7 +174,15 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
                                 float[] colors = new float[]{0, 1, 0, 1, 0, 1, 1, 1};
                                 float[] radii = new float[]{.5f, .5f};
                                 aSpheres = new Spheres(aShapeActivity, 0, 50, positions, colors, radii);
-                            }
+                            }else if(shapeNumner == 6){
+								aHeightMap = new HeightMap(aShapeActivity, 50, 50, PLOT_RANGE, PLOT_MIN_POSITION);
+
+								// some dummy data for heightmap (y vertex is responsible for the bump in the 50x50 plane mesh)
+								float[] vertices = {.2f, .1f, .1f,.3f, .45f, .6f,.1f, .2f, .7f,.0f, .1f, .0f,.7f, .2f, .1f,};
+								float[] colors = {0, .1f, .51f, 1,0, .11f, .21f, 1, .4f, .21f, 1, 1,1.0f, .31f, .61f, 1,.50f, .61f, .01f, 1,};
+
+								aHeightMap.pushDataPointsToHeightMap(vertices, colors);
+							}
 
 						} catch (OutOfMemoryError err) {
 
@@ -281,7 +294,11 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
 
 		// Translate the cube into the screen.
 		Matrix.setIdentityM(aModelMatrix, 0);
-		Matrix.translateM(aModelMatrix, 0, 0, 0, -3.5f);
+		if(aHeightMap != null){
+			Matrix.translateM(aModelMatrix, 0, 0, 0, -300.5f);
+		}else {
+			Matrix.translateM(aModelMatrix, 0, 0, 0, -3.5f);
+		}
         if(aDeltaX != 0 || aDeltaY != 0) {
             aRotationStatus = false;
         }
@@ -329,7 +346,9 @@ public class ShapeRenderer implements GLSurfaceView.Renderer
             aCubes.render(aMVPMatrix, aTexture);
         }else if(aSpheres != null){
             aSpheres.render(aMVPMatrix);
-        }
+        }else if(aHeightMap != null){
+			aHeightMap.render(aMVPMatrix);
+		}
 
 	}
 

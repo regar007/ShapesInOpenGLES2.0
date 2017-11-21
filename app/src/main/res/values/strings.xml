@@ -14,6 +14,8 @@
     <string name="shape_five_subtitle">This draws a Cube or Cubes in OpenGL ES 2.</string>
     <string name="shape_six">Shape Six: Drawing Sphere.</string>
     <string name="shape_six_subtitle">This draws a Sphere or Spheres in OpenGL ES 2.</string>
+    <string name="shape_seven">Shape Seven: Drawing HeightMap.</string>
+    <string name="shape_seven_subtitle">This draws a HeightMap in OpenGL ES 2.</string>
     <string-array name="lesson_six_min_filter_types">
         <item>GL_NEAREST</item>
         <item>GL_LINEAR</item>

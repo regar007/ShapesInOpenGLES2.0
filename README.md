@@ -9,7 +9,7 @@ This is an attempt to simplify a developer's work so that he/she can focus more 
 
 > [*Utils*](https://github.com/regar007/ShapesInOpenGLES2.0/tree/master/app/src/main/java/com/regar007/shapesinopengles20/Utils) folder has utility classes to compile shader, create texture, read shader from string and check gl errors.
 
-> [*Shapes*](https://github.com/regar007/ShapesInOpenGLES2.0/tree/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes) folder has shapes classes to create points, lines, triangles, quad, cubes, spheres.(more to come soon!)
+> [*Shapes*](https://github.com/regar007/ShapesInOpenGLES2.0/tree/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes) folder has shapes classes to create points, lines, triangles, quad, cubes, spheres, heightmap.(more to come soon!)
 
 > [*raw*](https://github.com/regar007/ShapesInOpenGLES2.0/tree/master/app/src/main/res/raw) folder has shader code for shapes.
 
@@ -37,6 +37,10 @@ Shapes implemented :-
 * [Spheres](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Spheres.java)
 
 ![Spheres](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/spheres.png)
+
+* [Spheres](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/HeightMap.java)
+
+![Spheres](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/heightmap.png)
 
 
 

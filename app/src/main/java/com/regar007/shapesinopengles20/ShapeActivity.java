@@ -44,6 +44,9 @@ public class ShapeActivity extends Activity {
 		else if(shape == 5){
 			setTitle(R.string.shape_six);
 		}
+		else if(shape == 6){
+			setTitle(R.string.shape_seven);
+		}
 
 		setContentView(R.layout.shapes);
 
