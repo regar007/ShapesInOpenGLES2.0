@@ -38,9 +38,9 @@ Shapes implemented :-
 
 ![Spheres](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/spheres.png)
 
-* [Spheres](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/HeightMap.java)
+* [HeightMap](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/HeightMap.java)
 
-![Spheres](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/heightmap.png)
+![HeightMap](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/heightmap.png)
 
 
 
