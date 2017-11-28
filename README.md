@@ -5,6 +5,7 @@ This tutorial helps the Android developers who are beginners in OpenGLES2.0 to c
 This is an attempt to simplify a developer's work so that he/she can focus more on the "IDEA" rather than the "IMPLEMENTATION" of the app.  
 
 ![App1](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/app.png)
+![App3](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/app3.png)
 ![App2](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/app2.png)
 ![App3](https://github.com/regar007/ShapesInOpenGLES2.0/blob/master/app/src/main/java/com/regar007/shapesinopengles20/Shapes/Screenshots/app3.png)
 
